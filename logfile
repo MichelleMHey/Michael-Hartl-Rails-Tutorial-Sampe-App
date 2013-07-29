@@ -6,3 +6,9 @@ LOG:  record with zero length at 0/256E070
 LOG:  redo is not required
 LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
+LOG:  database system was interrupted; last known up at 2013-07-24 13:14:04 CDT
+LOG:  database system was not properly shut down; automatic recovery in progress
+LOG:  record with zero length at 0/256E0D0
+LOG:  redo is not required
+LOG:  autovacuum launcher started
+LOG:  database system is ready to accept connections
