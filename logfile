@@ -12,3 +12,16 @@ LOG:  record with zero length at 0/256E0D0
 LOG:  redo is not required
 LOG:  autovacuum launcher started
 LOG:  database system is ready to accept connections
+LOG:  database system was interrupted; last known up at 2013-07-29 16:34:16 CDT
+LOG:  database system was not properly shut down; automatic recovery in progress
+LOG:  record with zero length at 0/256E130
+LOG:  redo is not required
+LOG:  autovacuum launcher started
+LOG:  database system is ready to accept connections
+FATAL:  lock file "postmaster.pid" already exists
+HINT:  Is another postmaster (PID 3547) running in data directory "/usr/local/var/postgres"?
+LOG:  database system was shut down at 2013-08-01 16:52:01 CDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  lock file "postmaster.pid" already exists
+HINT:  Is another postmaster (PID 1870) running in data directory "/usr/local/var/postgres"?
