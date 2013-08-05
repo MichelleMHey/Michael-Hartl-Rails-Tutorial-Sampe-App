@@ -3,6 +3,7 @@ require 'spec_helper'
 describe "Static pages" do
 
   describe "Home page" do
+<<<<<<< HEAD
 
     it "should have the content 'Sample App'" do
       visit '/static_pages/home'
@@ -71,5 +72,32 @@ describe "Static pages" do
     it "should not have a custom page title" do
       visit '/static_pages/contact'
       page.should_not have_selector('title', :text => "| Contact")    end
+=======
+    before { visit root_path }    
+    it { page.should have_selector('h1', :text => 'Sample App') }
+    it { page.should have_selector('title', :text => full_title('')) }
+    it { page.should_not have_selector('title', :text => "| Home") }
+  end
+
+  describe "Help page" do
+    before { visit help_path }    
+    it { page.should have_selector('h1', :text => 'Help') }
+    it { page.should have_selector('title', :text => full_title('')) }
+    it { page.should_not have_selector('title', :text => "| Help") }
+  end
+
+  describe "About page" do
+    before { visit about_path }    
+    it { page.should have_selector('h1', :text => 'About Us') }
+    it { page.should have_selector('title', :text => full_title('')) }
+    it { page.should_not have_selector('title', :text => "| About Us") }
+  end
+
+  describe "Contact page" do
+    before { visit contact_path }    
+    it { page.should have_selector('h1', :text => 'Contact') }
+    it { page.should have_selector('title', :text => full_title('')) }
+    it { page.should_not have_selector('title', :text => "| Contact") }
+>>>>>>> filling-in-layout
   end
 end
