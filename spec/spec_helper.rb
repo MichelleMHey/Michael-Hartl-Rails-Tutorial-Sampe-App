@@ -38,10 +38,7 @@ Spork.prefork do
     # rspec-rails.
     config.infer_base_class_for_anonymous_controllers = false
     config.include Capybara::DSL
-<<<<<<< HEAD
-=======
     config.include ApplicationHelper
->>>>>>> filling-in-layout
   end
 end
 
