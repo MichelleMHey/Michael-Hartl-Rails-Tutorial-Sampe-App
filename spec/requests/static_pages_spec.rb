@@ -1,55 +1,51 @@
 require 'spec_helper'
 
-describe "Static pages" do
-
-  shared_examples_for "all static pages" do
-    it { page.should have_selector('h1', text: heading) }
-    it { page.should have_selector('title', :text => full_title(''))}
-  end
-
+describe "StaticPages" do
+  
+  let(:base_title) { "Ruby on Rails Tutorial Sample App" }
+  
   describe "Home page" do
-    before { visit root_path }
-    let(:heading)    { 'Sample App' }
-    let(:page_title) { '' }
-    it_should_behave_like "all static pages"
-    it { should_not have_selector('title', :text => '| Home') }
+    
+    it "should have the content 'Sample App'" do
+      visit root_path
+      expect(page).to have_content('Sample App')
+    end
+    it "should have the right title" do
+      visit root_path
+      expect(page).to have_title("#{base_title}")
+    end
   end
 
   describe "Help page" do
-    before { visit help_path }
-    let(:heading)    { 'Help' }
-    let(:page_title) { '' }
-    it_should_behave_like "all static pages"
-    it { should_not have_selector('title', :text => '| Help') }
+    it "should have the content 'Help'" do
+      visit help_path
+      expect(page).to have_content('Help')
+    end
+    it "should have the right title" do
+      visit help_path
+      expect(page).to have_title("#{base_title}")
+    end
   end
 
   describe "About page" do
-    before { visit about_path }
-    let(:heading)    { 'About Us' }
-    let(:page_title) { '' }
-    it_should_behave_like "all static pages"
-    it { should_not have_selector('title', :text => '| About Us') }
-  end
-  
-  describe "Contact page" do
-    before { visit contact_path }
-    let(:heading)    { 'Contact' }
-    let(:page_title) { '' }
-    it_should_behave_like "all static pages"
-    it { should_not have_selector('title', :text => '| Contact') }
+    it "should have the content 'About Us'" do
+      visit about_path
+      expect(page).to have_content('About Us')
+    end
+    it "should have the right title" do
+      visit about_path  
+      expect(page).to have_title("#{base_title}")
+    end
   end
 
-  it "should have the right links on the layout" do
-    visit root_path
-    click_link "About"
-    page.should have_selector('title', :text => full_title('About Us'))
-    click_link "Help"
-    page.should have_selector('title', :text => full_title('Help'))
-    click_link "Contact"
-    page.should have_selector('title', :text => full_title('Contact'))
-    click_link "Sign up now!"
-    page.should have_selector('title', :text => full_title('Sign up'))
-    click_link "sample app"
-    page.should have_selector('title', :text => full_title('sample app'))
+  describe "Contact page" do
+    it "should have the content 'Contact'" do
+      visit contact_path
+      expect(page).to have_content('Contact')
+    end
+    it "should have the right title" do
+      visit contact_path
+      expect(page).to have_title("#{base_title}")
+    end
   end
 end
